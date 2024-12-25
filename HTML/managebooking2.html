@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="../CSS/managebooking2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo">
+            <img src="../IMAGES/logo1.png" alt="Logo">
+            <span>CineStarz</span>
+        </div>
+        <div class="helpline">
+            <i class="fas fa-phone-alt"></i>
+            <span>1800-123-456</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="admin2.html"><i class="fas fa-home"></i> Home</a></li>
+                
+               <li><a href="managemovie2.html"><i class="material-icons">movie</i> Manage Movies</a></li>
+                <li><a href="managebooking2.html"><i class="material-icons">receipt</i> Manage Bookings</a></li>
+               <li><a href="manageuser2.html"><i class="material-icons">people</i> Manage Users</a></li>
+               <li><a href="statistic2.html"><i class="material-icons">bar_chart</i> Statistics</a></li>
+                <li><a href="setting2.html"><i class="material-icons">settings</i> Settings</a></li>
+                
+                <li><a href="notification.html"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="logout.html"><i class="fa fa-sign-out"></i>logout</a></li>
+                <li><img src="../IMAGES/user.png" alt="User Avatar" class="user-avatar"></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1><b>Manage Booking</b></h1><br>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter Booking ID...">
+            <button id="searchBtn" onclick="searchBooking()">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <br>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>User Name</th>
+                    <th>Movie Title</th>
+                    <th>Show Time</th>
+                    <th>Seats</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTableBody">
+                <!-- Sample Row -->
+                <tr>
+                    <td>1001</td>
+                    <td>John Doe</td>
+                    <td>Movie Title 1</td>
+                    <td>2024-07-30 19:00</td>
+                    <td>3</td>
+                    <td>
+                        <button onclick="editBooking(this)">Edit</button>
+                        <button onclick="deleteBooking(this)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Booking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <input type="hidden" id="editBookingId">
+                        <div class="mb-3">
+                            <label for="editUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="editUserName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editMovieTitle" class="form-label">Movie Title</label>
+                            <input type="text" class="form-control" id="editMovieTitle">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editShowTime" class="form-label">Show Time</label>
+                            <input type="datetime-local" class="form-control" id="editShowTime">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editSeats" class="form-label">Seats</label>
+                            <input type="number" class="form-control" id="editSeats">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="saveEdit()">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Booking Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Search result details will be injected here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../JAVASCRIPT/managebooking2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

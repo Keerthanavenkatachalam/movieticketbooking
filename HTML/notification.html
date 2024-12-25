@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Notifications</title>
+    <link rel="stylesheet" href="../CSS/notification.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="../IMAGES/logo1.png" alt="Logo">
+            <span>CineStarz</span>
+        </div>
+        <div class="helpline">
+            <i class="fas fa-phone-alt"></i>
+            <span>1800-123-456</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="admin2.html"><i class="fas fa-home"></i> Home</a></li>
+                
+               <li><a href="managemovie2.html"><i class="material-icons">movie</i> Manage Movies</a></li>
+                <li><a href="managebooking2.html"><i class="material-icons">receipt</i> Manage Bookings</a></li>
+               <li><a href="manageuser2.html"><i class="material-icons">people</i> Manage Users</a></li>
+               <li><a href="statistic2.html"><i class="material-icons">bar_chart</i> Statistics</a></li>
+                <li><a href="setting2.html"><i class="material-icons">settings</i> Settings</a></li>
+                
+                <li><a href="notification.html"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="logout.html"><i class="fa fa-sign-out"></i>logout</a></li>
+               
+                <li><img src="../IMAGES/user.png" alt="User Avatar" class="user-avatar"></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Notification Sending Page -->
+    <div class="main-content">
+        <div class="header">
+            <h2>Notifications</h2>
+        </div><br>
+        
+        <div class="content">
+            <!-- Notification Form -->
+            <div class="settings-card">
+                <h3>Send Notification</h3>
+                <form id="notificationForm">
+                    <div class="form-group">
+                        <label for="recipient">Recipient</label>
+                        <select id="recipient" name="recipient">
+                            <option value="all">All Users</option>
+                            <!-- Example options; populate with actual user list dynamically -->
+                            <option value="user1">User 1</option>
+                            <option value="user2">User 2</option>
+                            <option value="user3">User 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notification-message">Notification Message</label>
+                        <textarea id="notification-message" name="notification-message" rows="4" placeholder="Enter your notification message here..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn send-btn" onclick="sendNotification()">Send Notification</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Pop-up -->
+    <div id="successPopup" class="success-popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <p>Notification sent successfully!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../JAVASCRIPT/notification.js"></script>
+</body>
+</html>

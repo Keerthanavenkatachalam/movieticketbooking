@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="../CSS/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="../IMAGES/logo1.png" alt="Logo">
+            <span>Movie Tickets</span>
+        </div>
+        <div class="helpline">
+            <i class="fas fa-phone-alt"></i>
+            <span>1800-123-456</span>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+               
+                <li><a href="signin.html" class="login-btn"><i class="fas fa-user"></i> Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="image">
+        <a href="seats.html"><img src="../IMAGES/arrow.png" alt="arrow" width="40px" height="40px"></a>
+    </div>
+    
+    <main>
+        <div class="payment-container">
+            <h2>Select Payment Method</h2>
+            <form action="#">
+                <div class="total-amount">
+                    <h3>Total Amount</h3>
+                    <p>₹ 500 x 2 persons = ₹ 1000</p>
+                </div>
+               
+                <div class="payment-cards">
+                    <div class="payment-card">
+                        <input type="radio" id="credit-card" name="payment-method" checked>
+                        <label for="credit-card">
+                            <img src="images/credit-card-icon.png" alt="Credit Card">
+                            <span>Credit Card</span>
+                        </label>
+                        <div class="payment-details">
+                            <input type="text" placeholder="Card Number" required>
+                            <input type="text" placeholder="Name on Card" required>
+                            <input type="text" placeholder="Expiry Date (MM/YY)" required>
+                            <input type="text" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="payment-card">
+                        <input type="radio" id="debit-card" name="payment-method">
+                        <label for="debit-card">
+                            <img src="images/debit-card-icon.png" alt="Debit Card">
+                            <span>Debit Card</span>
+                        </label>
+                        <div class="payment-details">
+                            <input type="text" placeholder="Card Number" required>
+                            <input type="text" placeholder="Name on Card" required>
+                            <input type="text" placeholder="Expiry Date (MM/YY)" required>
+                            <input type="text" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="payment-card">
+                        <input type="radio" id="net-banking" name="payment-method">
+                        <label for="net-banking">
+                            <img src="images/net-banking-icon.png" alt="Net Banking">
+                            <span>Net Banking</span>
+                        </label>
+                        <div class="payment-details">
+                            <select required>
+                                <option value="">Select Bank</option>
+                                <option value="sbi">State Bank of India</option>
+                                <option value="hdfc">HDFC Bank</option>
+                                <option value="icici">ICICI Bank</option>
+                                <option value="axis">Axis Bank</option>
+                            </select>
+                            <input type="text" placeholder="Username" required>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="payment-card">
+                        <input type="radio" id="upi" name="payment-method">
+                        <label for="upi">
+                            <img src="images/upi-icon.png" alt="UPI">
+                            <span>UPI</span>
+                        </label>
+                        <div class="payment-details">
+                            <select required>
+                                <option value="">Select UPI App</option>
+                                <option value="gpay">GPay</option>
+                                <option value="paytm">Paytm</option>
+                                <option value="phonepe">PhonePe</option>
+                                <option value="amazonpay">Amazon Pay</option>
+                            </select>
+                            <input type="text" placeholder="UPI ID" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>COMPANY</h3><br>
+                <ul>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>SUPPORT</h3><br>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>FOLLOW US</h3><br>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div><br>
+        <p>&copy; 2024 Movie Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>

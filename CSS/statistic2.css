@@ -1,0 +1,253 @@
+a{
+    color: #fff; 
+    text-decoration: none;
+ }
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f4f4f4;
+ }
+ 
+ /* Top Bar Styles */
+ .top-bar {
+     display: flex;
+     
+     justify-content: space-between;
+     align-items: center;
+     background-color: #333;
+     color: #fff;
+     padding: 10px;
+     
+     
+ }
+ 
+ .top-bar .logo {
+     
+     display: flex;
+     align-items: center;
+ }
+ 
+ .top-bar .logo img {
+     width: 50px;
+     height: 50px;
+     margin-right: 10px;
+ }
+ 
+ .top-bar span {
+     font-size: 24px;
+     font-weight: bold;
+     color: #f39c12;
+ }
+ 
+ .top-bar .helpline {
+ 
+     display: flex;
+     align-items: center;
+ }
+ 
+ .top-bar .helpline i {
+     margin-right: 5px;
+ }
+ 
+ /* Header Styles */
+ header {
+     background-color: #2c3e50;
+     color: #fff;
+     padding: 10px 20px;
+     display: flex;
+     justify-content: flex-end;
+ }
+ 
+ 
+ header nav ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     align-items: center;
+ }
+ 
+ header nav ul li {
+     margin-right: 20px;
+     position: relative;
+ }
+ 
+ header nav ul li a {
+     color: #fff;
+     text-decoration: none;
+     padding: 10px;
+     display: flex;
+     align-items: center;
+ }
+ 
+ header nav ul li a i {
+     margin-right: 5px;
+ }
+ 
+ header nav ul li a:hover {
+     color:#f39c12;
+     border-radius: 5px;
+ }
+ 
+ header nav ul li .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #333;
+     min-width: 160px;
+     z-index: 1;
+     border-radius: 5px;
+ }
+ 
+ header nav ul li .dropdown-content a {
+     color: #fff;
+     padding: 10px;
+     text-decoration: none;
+     display: block;
+ }
+ 
+ header nav ul li .dropdown-content a:hover {
+     background-color: #555;
+ }
+ 
+ header nav ul li:hover .dropdown-content {
+     display: block;
+ }
+ 
+ .main-content {
+    margin-left: 9%;
+    padding: 20px;
+    width:80%;
+    overflow: auto;
+    margin-top:4%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+
+.header .profile .material-icons {
+    margin-right: 10px;
+}
+.user-avatar {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+}
+
+.search-bar button {
+    background: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+}
+
+.search-bar button:hover {
+    background: #34495e;
+}
+
+.search-bar .material-icons {
+    font-size: 18px;
+}
+.statistics-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 20px;
+    margin: 0 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Charts */
+.charts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.chart-container {
+    width: 48%;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.chart-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chart {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.chart td {
+    padding: 5px 0;
+}
+
+.chart .bar {
+    display: inline-block;
+    height: 20px;
+    background-color: #3498db;
+    margin-right: 5px;
+}
+
+.chart span {
+    font-weight: bold;
+}

@@ -1,0 +1,326 @@
+a{
+    color: #fff; 
+    text-decoration: none;
+ }
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f4f4f4;
+ }
+ 
+ /* Top Bar Styles */
+ .top-bar {
+     display: flex;
+     
+     justify-content: space-between;
+     align-items: center;
+     background-color: #333;
+     color: #fff;
+     padding: 10px;
+     
+     
+ }
+ 
+ .top-bar .logo {
+     
+     display: flex;
+     align-items: center;
+ }
+ 
+ .top-bar .logo img {
+     width: 50px;
+     height: 50px;
+     margin-right: 10px;
+ }
+ 
+ .top-bar span {
+     font-size: 24px;
+     font-weight: bold;
+     color: #f39c12;
+ }
+ 
+ .top-bar .helpline {
+ 
+     display: flex;
+     align-items: center;
+ }
+ 
+ .top-bar .helpline i {
+     margin-right: 5px;
+ }
+ 
+ /* Header Styles */
+ header {
+     background-color: #2c3e50;
+     color: #fff;
+     padding: 10px 20px;
+     display: flex;
+     justify-content: flex-end;
+ }
+ 
+ 
+ header nav ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     align-items: center;
+ }
+ 
+ header nav ul li {
+     margin-right: 20px;
+     position: relative;
+ }
+ 
+ header nav ul li a {
+     color: #fff;
+     text-decoration: none;
+     padding: 10px;
+     display: flex;
+     align-items: center;
+ }
+ 
+ header nav ul li a i {
+     margin-right: 5px;
+ }
+ 
+ header nav ul li a:hover {
+     color:#f39c12;
+     border-radius: 5px;
+ }
+ 
+ header nav ul li .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #333;
+     min-width: 160px;
+     z-index: 1;
+     border-radius: 5px;
+ }
+ 
+ header nav ul li .dropdown-content a {
+     color: #fff;
+     padding: 10px;
+     text-decoration: none;
+     display: block;
+ }
+ 
+ header nav ul li .dropdown-content a:hover {
+     background-color: #555;
+ }
+ 
+ header nav ul li:hover .dropdown-content {
+     display: block;
+ }
+ 
+ .main-content {
+    margin-left: 9%;
+    padding: 20px;
+    width:80%;
+    overflow: auto;
+    margin-top:4%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.user-avatar {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* General Modal Styles */
+/* Main Content Styles */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+
+/* Card Styles */
+.settings-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Adjust width to fit 3 cards per row with gap */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.settings-section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+/* Card Heading */
+.settings-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Card Button */
+.settings-section .btn {
+    background-color: #007BFF; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.settings-section .btn:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Card Content */
+.settings-section .btn.open-modal {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Modal Header */
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Close Button */
+.close, .close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close-popup:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn.edit-btn {
+    background-color: #007BFF; /* Blue */
+}
+
+.btn.save-btn {
+    background-color: #28A745; /* Dark Green */
+    display: none; /* Hidden by default */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Success Pop-up */
+.success-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.success-popup .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.success-popup .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.success-popup p {
+    font-size: 18px;
+    color: #4CAF50; /* Success Green */
+}
+
+

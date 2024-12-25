@@ -1,0 +1,216 @@
+       
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        .top-bar {
+            display: flex;
+            
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            
+            
+        }
+        
+        .top-bar .logo {
+            
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-bar .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .top-bar span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        
+        .top-bar .helpline {
+        
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-bar .helpline i {
+            margin-right: 5px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .image{
+            margin-left: 30%;
+            padding-top: 4%;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        header nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        header nav ul li a i {
+            margin-right: 5px;
+        }
+        
+        header nav ul li a:hover {
+            color:#f39c12;
+            border-radius: 5px;
+        }
+        
+        
+        .seat-selection-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 600px;
+            padding: 20px;
+            margin-left: 30%;
+            margin-top: 2%;
+            text-align: center;
+
+            
+        }
+        .seat-categories1 {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+          
+            
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .seat-categories1:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .seat-selection-container img {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        .seat-numbers {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .seat-numbers label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #e0e0e0;
+        }
+        .seat-numbers input[type="radio"] {
+            display: none;
+        }
+        .seat-numbers input[type="radio"]:checked + label {
+            background-color: #ff416c;
+            color: white;
+        }
+        .seat-categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .seat-categories div {
+            text-align: center;
+        }
+        .select-seats-button {
+            background-color: #ff416c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .select-seats-button:hover {
+            background-color: #ff0050;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        footer .footer-content div {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        footer .footer-content h3 {
+            margin-bottom: 10px;
+            color: #f39c12;
+            font-size: 30px;
+        }
+        
+        footer .footer-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer .footer-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer .footer-content ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        footer .footer-content ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        

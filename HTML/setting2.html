@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="../CSS/setting2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo">
+            <img src="../IMAGES/logo1.png" alt="Logo">
+            <span>CineStarz</span>
+        </div>
+        <div class="helpline">
+            <i class="fas fa-phone-alt"></i>
+            <span>1800-123-456</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="admin2.html"><i class="fas fa-home"></i> Home</a></li>
+                
+               <li><a href="managemovie2.html"><i class="material-icons">movie</i> Manage Movies</a></li>
+                <li><a href="managebooking2.html"><i class="material-icons">receipt</i> Manage Bookings</a></li>
+               <li><a href="manageuser2.html"><i class="material-icons">people</i> Manage Users</a></li>
+               <li><a href="statistic2.html"><i class="material-icons">bar_chart</i> Statistics</a></li>
+                <li><a href="setting2.html"><i class="material-icons">settings</i> Settings</a></li>
+                
+                <li><a href="notification.html"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="logout.html"><i class="fa fa-sign-out"></i>logout</a></li>
+               
+                <li><img src="../IMAGES/user.png" alt="User Avatar" class="user-avatar"></li>
+            </ul>
+        </nav>
+    </header>
+    
+   <!-- Success Pop-up -->
+<div id="successPopup" class="success-popup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <p>Settings updated successfully!</p>
+    </div>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h2>Manage User</h2>
+    </div><br>
+    
+    <div class="content">
+        <!-- Site Settings -->
+        <div class="settings-section">
+            <h3>Site Settings</h3>
+            <button class="btn open-modal" data-target="#siteSettingsModal">Edit Site Settings</button>
+        </div>
+
+        <!-- Admin Settings -->
+        <div class="settings-section">
+            <h3>Admin Settings</h3>
+            <button class="btn open-modal" data-target="#adminSettingsModal">Edit Admin Settings</button>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="settings-section">
+            <h3>Notification Settings</h3>
+            <button class="btn open-modal" data-target="#notificationSettingsModal">Edit Notification Settings</button>
+        </div>
+
+        <!-- Privacy Settings -->
+        <div class="settings-section">
+            <h3>Privacy Settings</h3>
+            <button class="btn open-modal" data-target="#privacySettingsModal">Edit Privacy Settings</button>
+        </div>
+
+        <!-- API Keys Management -->
+        <div class="settings-section">
+            <h3>API Keys Management</h3>
+            <button class="btn open-modal" data-target="#apiKeysModal">Edit API Keys</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Site Settings -->
+<div id="siteSettingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Site Settings</h3>
+        <form action="/update-settings" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="site-name">Site Name</label>
+                <input type="text" id="site-name" name="site-name" value="MovieBooking" readonly>
+            </div>
+            <div class="form-group">
+                <label for="theme">Theme</label>
+                <select id="theme" name="theme" disabled>
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Contact Email</label>
+                <input type="email" id="contact-email" name="contact-email" value="support@moviebooking.com" readonly>
+            </div>
+            <div class="form-group">
+                <label for="phone">Contact Phone</label>
+                <input type="tel" id="phone" name="phone" value="123-456-7890" readonly>
+            </div>
+            <div class="form-group">
+                <label for="logo">Site Logo</label>
+                <input type="file" id="logo" name="logo" disabled>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn edit-btn">Edit</button>
+                <button type="submit" class="btn save-btn" style="display:none;">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Admin Settings -->
+<div id="adminSettingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Admin Settings</h3>
+        <form action="/update-admin" method="POST">
+            <div class="form-group">
+                <label for="admin-name">Admin Name</label>
+                <input type="text" id="admin-name" name="admin-name" value="Admin" readonly>
+            </div>
+            <div class="form-group">
+                <label for="admin-email">Admin Email</label>
+                <input type="email" id="admin-email" name="admin-email" value="admin@moviebooking.com" readonly>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">New Password</label>
+                <input type="password" id="admin-password" name="admin-password" readonly>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn edit-btn">Edit</button>
+                <button type="submit" class="btn save-btn" style="display:none;">Update Admin</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Notification Settings -->
+<div id="notificationSettingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Notification Settings</h3>
+        <form action="/update-notifications" method="POST">
+            <div class="form-group">
+                <label for="email-notifications">Email Notifications</label>
+                <select id="email-notifications" name="email-notifications" disabled>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sms-notifications">SMS Notifications</label>
+                <select id="sms-notifications" name="sms-notifications" disabled>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn edit-btn">Edit</button>
+                <button type="submit" class="btn save-btn" style="display:none;">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Privacy Settings -->
+<div id="privacySettingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Privacy Settings</h3>
+        <form action="/update-privacy" method="POST">
+            <div class="form-group">
+                <label for="data-sharing">Data Sharing</label>
+                <select id="data-sharing" name="data-sharing" disabled>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="privacy-policy">Privacy Policy</label>
+                <textarea id="privacy-policy" name="privacy-policy" rows="4" readonly>Enter your privacy policy here...</textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn edit-btn">Edit</button>
+                <button type="submit" class="btn save-btn" style="display:none;">Update Privacy Settings</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for API Keys Management -->
+<div id="apiKeysModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>API Keys Management</h3>
+        <form action="/update-api-keys" method="POST">
+            <div class="form-group">
+                <label for="api-key">API Key</label>
+                <input type="text" id="api-key" name="api-key" value="Enter your API key" readonly>
+            </div>
+            <div class="form-group">
+                <label for="api-secret">API Secret</label>
+                <input type="text" id="api-secret" name="api-secret" value="Enter your API secret" readonly>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn edit-btn">Edit</button>
+                <button type="submit" class="btn save-btn" style="display:none;">Save API Keys</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../JAVASCRIPT/setting2.js"></script>
+
+</body>
+</html>

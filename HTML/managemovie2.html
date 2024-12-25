@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Movies</title>
+    <link rel="stylesheet" href="../CSS/managemovie.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Inline styles for simplicity */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .confirmation-content {
+            padding: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #backButton {
+            display: none;
+        }
+
+        #viewAllButton {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+     <!-- Top Bar -->
+     <div class="top-bar">
+        <div class="logo">
+            <img src="../IMAGES/logo1.png" alt="Logo">
+            <span>CineStarz</span>
+        </div>
+        <div class="helpline">
+            <i class="fas fa-phone-alt"></i>
+            <span>1800-123-456</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="admin2.html"><i class="fas fa-home"></i> Home</a></li>
+                
+               <li><a href="managemovie2.html"><i class="material-icons">movie</i> Manage Movies</a></li>
+                <li><a href="managebooking2.html"><i class="material-icons">receipt</i> Manage Bookings</a></li>
+               <li><a href="manageuser2.html"><i class="material-icons">people</i> Manage Users</a></li>
+               <li><a href="statistic2.html"><i class="material-icons">bar_chart</i> Statistics</a></li>
+                <li><a href="setting2.html"><i class="material-icons">settings</i> Settings</a></li>
+                
+                <li><a href="notification.html"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="logout.html"><i class="fa fa-sign-out"></i>logout</a></li>
+               
+                <li><img src="../IMAGES/user.png" alt="User Avatar" class="user-avatar"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-bar">
+        <h1>Manage Movies</h1><hr>
+        <input type="text" id="searchBar" placeholder="Search movies...">
+        <button onclick="searchMovies()">Search</button>
+        <button id="viewAllButton" onclick="viewAll()">View All</button>
+        <button id="backButton" onclick="goBack()">Back</button>
+    </div>
+        <table id="moviesTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    <th>Duration</th>
+                    <th>Language</th>
+                    <th>Format</th>
+                    <th>Theatres</th>
+                    <th>Director</th>
+                    <th>Cast & Crew</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="moviesList">
+                <!-- Movie rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+           <br>
+        <div id="addMovieFormContainer">
+            <h2>ADD MOVIES</h2>
+            <form id="addMovieForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre">
+                <label for="releaseDate">Release Date:</label>
+                <input type="date" id="releaseDate" name="releaseDate">
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" name="duration">
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language">
+                <label for="format">Format:</label>
+                <input type="text" id="format" name="format">
+                <label for="theatres">Theatres:</label>
+                <input type="text" id="theatres" name="theatres">
+                <label for="director">Director:</label>
+                <input type="text" id="director" name="director">
+                <label for="castAndCrew">Cast & Crew:</label>
+                <input type="text" id="castAndCrew" name="castAndCrew">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image">
+                <button type="button" onclick="addMovie()">Add Movie</button>
+            </form>
+        </div>
+        <!-- Success Message Modal -->
+<div id="successModal" style="display:none;">
+    <div>
+        <p id="successMessage"></p>
+        <button onclick="closeSuccessModalAfterDelay()">OK</button>
+    </div>
+</div>
+
+
+        <div id="editMovieFormContainer" style="display:none;">
+            <h2>Edit Movie</h2>
+            <form id="editMovieForm">
+                <!-- Edit form fields will be dynamically inserted here -->
+            </form>
+        </div>
+
+        <div id="viewMovieDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="viewMovieDetails">
+                    <!-- Movie details will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content confirmation-content">
+                <span class="close" onclick="closeConfirmationModal()">&times;</span>
+                <div id="confirmationMessage">
+                    <!-- Confirmation message will be dynamically inserted here -->
+                </div>
+                <button id="confirmButton" onclick="performAction()">Confirm</button>
+                <button onclick="closeConfirmationModal()">Cancel</button>
+            </div>
+        </div>
+
+    </main>
+    <script src="../JAVASCRIPT/managemovie2.js"></script>
+</body>
+</html>
